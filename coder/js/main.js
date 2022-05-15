@@ -1,44 +1,67 @@
-//reservar turno en un salón de belleza
+let servicioId;
+const saludar = () => {
+    
+let nombre = prompt ("bienvenido, ingrese su nombre");
 
-function opcion (servicio) {
-  this.servicio = servicio;
+while (nombre === ""){
+nombre = prompt ("bienvenido, ingrese su nombre");
 }
 
-const opcion1 = new opcion ("peluquería")
-const opcion2 = new opcion ("manicuría")
-const opcion3 = new opcion ("pedicuría")
-const opcion4 = new opcion ("depilación")
-const opcion5 = new opcion ("maquillaje")
+return nombre;
+}
+saludar ();
 
-let direccionPregunta = ""
-let solicitud = parseInt (prompt("Desea solicitar turno para: \n\t 1 - Peluquería \n\t 2 - Manicuría \n\t 3 - Pedicuría \n\t 4 - Depilación  \n\t 5 - Maquillaje \n\t ESC para salir " ))
 
-if (solicitud === 1 || solicitud === 2 || solicitud ===3 || solicitud === 4 || solicitud === 5) {
-  switch (solicitud) {
-      case 1:
-          alert("Ha seleccionado un turno para " + opcion1.servicio);
-          console.log(opcion1);
-          break;
-          
-      case 2:
-          alert("Ha seleccionado un turno para " + opcion2.servicio);
-          console.log(opcion2);
-          break;
-             
-      case 3:
-        alert("Ha seleccionado un turno para " + opcion3.servicio);
-        console.log(opcion3);
-        break;
-      case 4:
-        alert("Ha seleccionado un turno para " + opcion4.servicio);
-        console.log(opcion4);
-        break;
-  
-      case 5: 
-      alert("Ha seleccionado un turno para " + opcion5.servicio);
-      console.log(opcion5);
-      break;
-  }
+class opcion {
+  constructor (servicio, id){
+  this.servicio= servicio;
+  this.id=id;
+}
+}
+
+  const peluqueria = new opcion ("Peluquería", 1)
+  const manicura = new opcion ("Manicura", 2)
+  const pedicura = new opcion ("Pedicura", 3)
+  const depilacion = new opcion ("Depilación", 4)
+  const maquillaje = new opcion ("Maquillaje", 5)
+  const spa = new opcion ("Spa", 6)
+  const arrayservicios = [peluqueria, manicura, pedicura, depilacion, maquillaje, spa];
+
+
+let carrito = [];
+
+const mostrarServicios = () => { 
+let texto = ""; // iniciar variable texto
+arrayservicios.forEach((elemento)=>{
+texto += `${elemento.servicio} \n`;
+});
+alert (texto);
+};
+
+mostrarServicios ();
+
+function (elegir) {
+let seleccion = parseInt(prompt(`Elija un servicio :\n${texto}`));
+return seleccion; 
+}
+
+  while (seleccion < 1 || seleccion > 6) {
+    seleccion = parseInt (prompt(`Incorrecto !\n Elija un servicio :\n${texto}`));
+}
+
+
+function servicioSeleccionado(id) {
+  console.log(id);
+  let serviFind = arrayservicios.find((element) => element.id === id);
+  carrito.push(serviFind);
+}
+
+const init = () => {
+  servicioId = mostrarServicios();
+  servicioSeleccionado(servicioId);
+};
+
+init ();
 
   let turno = prompt ("Ingrese fecha y horario del turno");
   alert ("Eligió un turno para el" + " " + turno);
@@ -77,20 +100,24 @@ if (solicitud === 1 || solicitud === 2 || solicitud ===3 || solicitud === 4 || s
 
           if (solicitud === 1) {
               alert(cliente1.nombre + ":" +" fuiste agendado para"+ opcion1.servicio +" el día " + turno + ", ¡Muchas gracias!")
-          } else if (solicitud === 2) {
+          } 
+          else if (solicitud === 2) {
             alert(cliente1.nombre + ":" + " fuiste agendado para "+ opcion2.servicio +" el día " + turno + ", ¡Muchas gracias!")
-          } else if (solicitud === 3) {
+          } 
+          else if (solicitud === 3) {
             alert(cliente1.nombre + ":" + " fuiste agendado para "+ opcion3.servicio +" el día " + turno + ", ¡Muchas gracias!")
-          } else if (solicitud === 4) {
+          } 
+          else if (solicitud === 4) {
             alert(cliente1.nombre + ":" + " fuiste agendado para "+ opcion4.servicio +" el día " + turno + ", ¡Muchas gracias!")
-          } else if (solicitud === 5) {
+          } 
+          else if (solicitud === 5) {
             alert(cliente1.nombre + ":" + " fuiste agendado para "+ opcion5.servicio +" el día " + turno + ", ¡Muchas gracias!")
-          } else {
-          
-          }
-} else if (solicitud <1 || solicitud >5 ){
+         } 
+         else if (solicitud <1 || solicitud >5 ){
   alert("La opcion ingresada no es valida, intente mas tarde")
 }
 else {
   alert ("Lo esperamos nuevamente")
 }
+
+
