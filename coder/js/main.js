@@ -75,8 +75,24 @@ console.log (turno)
 let precio = ""
 let pregunta = prompt ("¿Desea saber el costo total?")
 
+
+const sumarTotal = () => {
+  const total =  carrito.reduce ((accumulator, curr) => accumulator + curr.precio, 0)
+  console.log(total);
+  alert ("El total es de: $" + total)
+  };
+
 if (pregunta === "si" || pregunta === "Si" || pregunta === "SI") {
         
-    // sumar precio de los servicios seleccionados
-      
+sumarTotal ();
+     
 };
+
+let pregunta2 = prompt ("¿Desea confirmar el turno?")
+
+if (pregunta === "si" || pregunta === "Si" || pregunta === "SI") {
+        
+alert ("Turno confirmado! Te esperamos el " + turno + " ¡Muchas gracias!")
+       
+  };
+
