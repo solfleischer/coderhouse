@@ -222,3 +222,29 @@ p {
                background-repeat: no-repeat;
                background-size: cover;
                 }
+
+                .imagen{
+                    width: 40%;
+                    height: 100%;
+                     }
+
+
+.formulario{
+    width: 55%;
+    
+     }
+
+     .contacto{
+     max-width: 1200px;
+     margin: 60px auto;
+    
+    }
+
+    .tipo2{
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 30px;
+        margin-top: 3%;
+        font-weight: bold;
+        color: rgb(58, 42, 73);
+        margin-bottom: 2%;
+      }
