@@ -5,6 +5,14 @@ const contenedorCarrito = document.getElementById('carrito-contenedor')
 
 const botonVaciar = document.getElementById('vaciar-carrito')
 
+const btnEnviar= document.getElementById('btnEnviar')
+
+const hola= document.getElementById('hola')
+
+const confirmar= document.getElementById('confirmar')
+
+const aceptar=document.getElementById('aceptar')
+
 
 const cantidad = document.getElementById('cantidad')
 const precioTotal = document.getElementById('precioTotal')
@@ -41,9 +49,43 @@ Servicios.forEach((servicio) => {
     boton.addEventListener('click', () => {
        
         agregarAlCarrito(servicio.id)
+
+        swal("¿Desea agregarlo a sus turnos?", {
+            buttons: {
+              cancel: "Cancelar",
+              catch: {
+                text: "Aceptar",
+                value: "catch",
+              },
+            },
+          })
+          .then((value) => {
+            switch (value) {
+           
+              case "catch":
+                swal({
+                    text: "Se ha agregado a sus turnos",
+                    button: "Ok",
+                  })
+                break;
+           
+            }
+          });
+        })
         
+        })
+
+
+        
+aceptar.addEventListener('click', () => {
+
+swal({
+        title: "Su turno fue confirmado",
+        icon: "success",
+        button: "Ok",
+      })
     })
-})
+
 
 const agregarAlCarrito = (servId) => {
 
@@ -68,6 +110,18 @@ const agregarAlCarrito = (servId) => {
     
     console.log (carrito)
 }
+
+
+hola.addEventListener('click', () => {
+
+    swal({
+        title: "Su mensaje se ha enviado con éxito",
+        icon: "success",
+        button: "Ok",
+      })
+    })
+      
+
 
 const eliminarDelCarrito = (servId) => {
     const item = carrito.find((serv) => serv.id === servId)
@@ -104,3 +158,13 @@ const actualizarCarrito = () => {
     
 
 }
+
+AOS.init({
+    offset: 100, 
+    delay: 0, 
+    duration: 1000 
+  });
+
+
+ 
+ 
