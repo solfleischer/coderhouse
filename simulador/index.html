@@ -91,19 +91,20 @@
       <div class="d-flex" data-aos="fade-up">
       <img class="imagen" src="img/salon.jpg" alt="" data-aos="fade-up">
 
-      <form class="formulario ms-5" data-aos="fade-up">
-      <div class="mb-3">
-        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nombre" data-aos="fade-up">
-        <input type="text" class="form-control mt-2" id="exampleFormControlInput1" placeholder="Apellido" data-aos="fade-up">
-        <input type="email" class="form-control mt-2" id="exampleFormControlInput1" placeholder="Mail" data-aos="fade-up">
-        <textarea class="form-control mt-4" id="exampleFormControlTextarea1" rows="3" placeholder="Mensaje" data-aos="fade-up"></textarea>
-      </div>
-    </form>
-  </div>
-      <div style="margin-top: -6%;">
-        <button id="hola" type="submit"  class="btn boton mt-3 mb-3" style="margin-left: 67%;" data-aos="fade-up">Enviar</button>
-      </div>
- </div>
+      
+    <form id="form" class="formulario ms-5" data-aos="fade-up"
+  action="https://formspree.io/f/xnqwrwbz"
+  method="POST">
+  <div class="mb-3">
+  <input type="text" class="form-control" placeholder="Nombre" data-aos="fade-up" name="nombre">
+  <input type="text" class="form-control mt-2" placeholder="Apellido" data-aos="fade-up" name="apellido">
+  <input type="email" name="email" class="form-control mt-2" placeholder="Mail" data-aos="fade-up">
+  <textarea name="message" class="form-control mt-4" rows="3" placeholder="Mensaje" data-aos="fade-up"></textarea>
+  
+  <button id="hola" class="btn boton mt-3 mb-3" type="submit" style="margin-left: 67%;" data-aos="fade-up">Enviar</button>
+</form>
+</div>
+</div>
 
 
           <div class="container martop">
@@ -147,6 +148,7 @@
 
 
           </div>
+        </div>
 
     <footer class="footer">
 
@@ -195,6 +197,9 @@
       © 2022 Copyright: Beauty S.R.L.
       </div>
     </footer>
+
+
+
 
 
 
