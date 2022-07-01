@@ -7,7 +7,7 @@ const botonVaciar = document.getElementById('vaciar-carrito')
 
 const btnEnviar= document.getElementById('btnEnviar')
 
-const hola= document.getElementById('hola')
+
 
 const confirmar= document.getElementById('confirmar')
 
@@ -112,14 +112,7 @@ const agregarAlCarrito = (servId) => {
 }
 
 
-hola.addEventListener('click', () => {
 
-    swal({
-        title: "Su mensaje se ha enviado con éxito",
-        icon: "success",
-        button: "Ok",
-      })
-    })
       
 
 
@@ -166,26 +159,7 @@ AOS.init({
   });
 
 
-const $form= document.querySelector('#form')
 
-$form.addEventListener('submit', handleSubmit)
 
-async function handleSubmit (event){
-event.preventDefault()
-const form = new FormData(this)
-
-const response= await fetch(this.action,{
-method: this.method,
-body: form,
-headers:{
-  'Accept': 'application/json'
-}
-})
-
-if (response.ok){
-  this.reset()
-
-}
-}
  
  
